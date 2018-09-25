@@ -1,0 +1,95 @@
+# open terminal, blazingly fast compared to iTerm/Hyper
+# cmd - return : open -na /Applications/iTerm.app
+alt - return : osascript ~/scripts/iTerm2-wrapper.scpt
+
+# Open a new Finder winodow
+alt - e : osascript ~/scripts/new-finder-window.scpt
+
+# Lock the screen
+ctrl + alt - l : ~/scripts/lock-osx.sh
+
+# Change the wallpaper
+alt - 0x2A : osascript ~/scripts/random_wallpaper.scpt
+
+# close focused window
+shift + alt - q : chunkc tiling::window --close
+
+# focus window
+alt - h : chunkc tiling::window --focus west
+alt - j : chunkc tiling::window --focus south
+alt - k : chunkc tiling::window --focus north
+alt - l : chunkc tiling::window --focus east
+
+# equalize size of windows
+ ctrl + shift + alt - 0 : chunkc tiling::desktop --equalize
+
+# swap window
+shift + alt - h : chunkc tiling::window --swap west
+shift + alt - j : chunkc tiling::window --swap south
+shift + alt - k : chunkc tiling::window --swap north
+shift + alt - l : chunkc tiling::window --swap east
+
+# send window to desktop
+shift + alt - 1 : chunkc tiling::window --send-to-desktop 1
+shift + alt - 2 : chunkc tiling::window --send-to-desktop 2
+shift + alt - 3 : chunkc tiling::window --send-to-desktop 3
+shift + alt - 4 : chunkc tiling::window --send-to-desktop 4
+shift + alt - 5 : chunkc tiling::window --send-to-desktop 5
+shift + alt - 6 : chunkc tiling::window --send-to-desktop 6
+shift + alt - 7 : chunkc tiling::window --send-to-desktop 7
+shift + alt - 8 : chunkc tiling::window --send-to-desktop 8
+shift + alt - 9 : chunkc tiling::window --send-to-desktop 9
+
+# focus monitor
+ctrl + alt - 1  : chunkc tiling::monitor -f 1
+ctrl + alt - 2  : chunkc tiling::monitor -f 2
+ctrl + alt - 3  : chunkc tiling::monitor -f 3
+
+# send window to monitor and follow focus
+ctrl + shift + alt - 1  : chunkc tiling::window --send-to-monitor 1; chunkc tiling::monitor -f 1
+ctrl + shift + alt - 2  : chunkc tiling::window --send-to-monitor 2; chunkc tiling::monitor -f 2
+ctrl + shift + alt - 3  : chunkc tiling::window --send-to-monitor 3; chunkc tiling::monitor -f 3
+
+ #Resize region size custom
+ ctrl + alt + shift - left : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge east;\
+                             chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
+
+ ctrl + alt + shift - right : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge east;\
+                             chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge west
+
+ ctrl + alt + shift - down : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge south;\
+                             chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge north
+
+ ctrl + alt + shift - up : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge south;\
+                           chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge north
+
+
+# set insertion point for focused container
+ alt - v : chunkc tiling::window --use-insertion-point south
+ alt - h : chunkc tiling::window --use-insertion-point east
+
+# rotate tree
+ alt - r : chunkc tiling::desktop --rotate 90
+
+# mirror tree y-axis
+# alt - y : chunkc tiling::desktop --mirror vertical
+
+# mirror tree x-axis
+# alt - x : chunkc tiling::desktop --mirror horizontal
+
+# toggle window fullscreen
+ alt - m : chunkc tiling::window --toggle fullscreen
+
+# toggle window native fullscreen
+ shift + alt - m : chunkc tiling::window --toggle native-fullscreen
+
+# toggle window split type
+ alt - w : chunkc tiling::window --toggle split
+
+# float / unfloat window
+ alt - f : chunkc tiling::window --toggle float
+
+# float next window to be tiled
+ shift + alt - t : chunkc set window_float_next 1
+
+# ctrl + alt - w : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/dev_1
