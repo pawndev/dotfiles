@@ -264,8 +264,6 @@ set hlsearch
 set ignorecase
 set incsearch
 set linebreak
-set nobackup
-set noswapfile
 set ruler
 set scrolloff=3
 set shiftwidth=2
@@ -284,9 +282,19 @@ set hidden
 set expandtab ts=2 sw=2 ai
 set pastetoggle=<F2>
 set laststatus=2
+set backup
+set writebackup
+set swapfile
+set backupdir=~/.config/nvim/backups
+set directory=~/.config/nvim/backups
+if has("persistent_undo")
+    set undodir=~/.config/nvim/undodir
+    set undofile
+endif
 "hi clear FoldColumn
 au FileType qf wincmd J
 au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+au BufWritePre * let &bex = '-' . strftime("%Y_%m_%d-%H_%M_%S") . '.vimbackup'
 autocmd FileType vim,zsh setlocal foldmethod=marker
 " }}}
 

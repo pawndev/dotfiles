@@ -21,6 +21,8 @@ fi
 
 echo "Creating nvim config directory"
 mkdir -p ~/.config/nvim
+mkdir -p ~/.config/nvim/undodir
+mkdir -p ~/.config/nvim/backups
 
 echo "Linking nvimrc"
 ln -sf $DIRNAME/init.vim ~/.config/nvim/
