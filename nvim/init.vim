@@ -346,7 +346,6 @@ Plug 'pawndev/colour-schemes', {'rtp': 'vim'}
 " Utilities {{{
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
-Plug 'sjl/gundo.vim'
 Plug 'dietsche/vim-lastplace'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
@@ -354,7 +353,9 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'stevearc/vim-arduino'
-Plug 'mbbill/undotree'
+Plug 'simnalamburt/vim-mundo'
+"Plug 'mbbill/undotree'
+"Plug 'sjl/gundo.vim'
 "Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 " }}}
 
