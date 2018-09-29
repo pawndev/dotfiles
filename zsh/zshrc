@@ -22,7 +22,15 @@ export YSU_MODE=ALL
 # zplug
 export NVM_LAZY_LOAD=true
 #Theme
+prompt_vi_mode() {
+  case ${KEYMAP} in
+        (vicmd)      prompt_segment blue white "N" ; print -n -- "\E]50;CursorShape=0\C-G" ;;
+        (main|viins) prompt_segment blue white "I" ; print -n -- "\E]50;CursorShape=2\C-G";;
+        (*)          prompt_segment blue white "I" ; print -n -- "\E]50;CursorShape=2\C-G";;
+    esac
+}
 export BULLETTRAIN_PROMPT_ORDER=(
+  vi_mode
   time
   status
   custom
