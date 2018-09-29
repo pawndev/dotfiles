@@ -58,7 +58,7 @@ font-2 = siji:pixelsize=10;1
 font-3 = Weather Icons:style=Regular:size=10;1
 font-4 = RobotoMono Nerd Font:style=Regular:pixelsize=14;1
 
-modules-left = i3 spotify mpd
+modules-left = i3
 modules-center = date weather
 modules-right = filesystem xbacklight pulseaudio memory cpu wlan eth battery temperature powermenu 
 tray-position = right
@@ -200,18 +200,18 @@ label-visible-font = ${self.label-focused-font}
 label-urgent = %icon%
 label-urgent-background = ${self.label-focused-background}
 label-urgent-foreground = ${colors.alert}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
+label-urgent-padding = 2
 label-urgent-font = ${self.label-focused-font}
 
 ; Separator in between workspaces
 label-separator =
 
-[module/weather]
-type = custom/script
-exec = ~/.config/polybar/modules/forecast/polybar-forecast
-interval = 600
-label-font = 4
-label-foreground = ${xrdb:URxvt*color2}
+;[module/weather]
+;type = custom/script
+;exec = ~/.config/polybar/modules/forecast/polybar-forecast
+;interval = 600
+;label-font = 4
+;label-foreground = ${xrdb:URxvt*color2}
 
 ;[module/spotify]
 ;type = custom/script
