@@ -14,5 +14,5 @@ fi
 echo "Creating kitty config directory"
 mkdir -p ~/.config/kitty
 
-echo "Linking nvimrc"
+echo "Linking kitty conf"
 ln -sf $DIRNAME/kitty.conf ~/.config/kitty/

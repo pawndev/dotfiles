@@ -295,7 +295,7 @@ endif
 au FileType qf wincmd J
 au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 au BufWritePre * let &bex = '-' . strftime("%Y_%m_%d-%H_%M_%S") . '.vimbackup'
-autocmd FileType vim,zsh setlocal foldmethod=marker
+autocmd FileType vim,zsh,i3config,dosini setlocal foldmethod=marker
 " }}}
 
 " Plugin {{{
@@ -331,6 +331,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'elixir-editors/vim-elixir'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'StanAngeloff/php.vim'
+Plug 'mboughaba/i3config.vim'
 Plug 'jparise/vim-graphql'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'SirVer/ultisnips'
