@@ -295,7 +295,7 @@ endif
 au FileType qf wincmd J
 au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 au BufWritePre * let &bex = '-' . strftime("%Y_%m_%d-%H_%M_%S") . '.vimbackup'
-autocmd FileType vim,zsh,i3config,dosini setlocal foldmethod=marker
+autocmd FileType vim,zsh,i3config,dosini,conf setlocal foldmethod=marker
 " }}}
 
 " Plugin {{{
