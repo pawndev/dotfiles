@@ -1,0 +1,20 @@
+! vim: set filetype=xdefaults :
+
+rofi.font:                           Roboto Mono for Powerline 11
+
+! Solarized theme
+!rofi.color-enabled: true
+!rofi.color-window: #002b37, #b58900, #003642
+!rofi.color-normal: #002b37, #819396, #002b37, #003642, #819396
+!rofi.color-active: #002b37, #008ed4, #002b37, #003642, #008ed4
+!rofi.color-urgent: #002b37, #da4281, #002b37, #003642, #da4281
+
+! Earthsong
+rofi.color-enabled: true
+!rofi.theme:    earthsong
+!rofi-color-window: background, border, separator
+rofi.color-window: #292520, #171a1e, #c65f4b
+!rofi-color-normal: background, foreground, alt, highlight background, highlight foreground
+rofi.color-normal: #171a1e, #ce7d56, #171a1e, #e6d0ba, #171a1e
+rofi.color-active: #c65f4b, #f2a782, #797268, #f8f8f1, #797268
+rofi.color-urgent: #002b37, #da4281, #002b37, #003642, #da4281

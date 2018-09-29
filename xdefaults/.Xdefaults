@@ -1,0 +1,21 @@
+! Earthsong
+URxvt*foreground: #e5c7a9
+URxvt*background: [90]#292520
+
+URxvt*color0:  #171a1e
+URxvt*color1:  #c65f4b
+URxvt*color2:  #a1c96c
+URxvt*color3:  #efbc55
+URxvt*color4:  #4aa6c3
+URxvt*color5:  #ce7d56
+URxvt*color6:  #70a16b
+URxvt*color7:  #e6d0ba
+
+URxvt*color8:  #797268
+URxvt*color9:  #ef8373
+URxvt*color10: #b3df60
+URxvt*color11: #e5db82
+URxvt*color12: #8bdffc
+URxvt*color13: #f2a782
+URxvt*color14: #a8eca2
+URxvt*color15: #f8f8f1
