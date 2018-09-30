@@ -60,7 +60,8 @@ font-4 = RobotoMono Nerd Font:style=Regular:pixelsize=14;1
 
 modules-left = i3
 modules-center = date weather
-modules-right = filesystem xbacklight pulseaudio memory cpu wlan eth battery temperature powermenu 
+;modules-right = filesystem xbacklight pulseaudio memory cpu wlan eth battery temperature powermenu 
+modules-right = filesystem pulseaudio memory cpu battery temperature powermenu 
 tray-position = right
 tray-padding = 0
 ;tray-transparent = true
@@ -385,8 +386,8 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 [module/battery]
 type = internal/battery
 battery = BAT0
-adapter = ACAD
-full-at = 98
+adapter = ADP1
+full-at = 100
 
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = ${xrdv:URvt*color15:#ffb52a}

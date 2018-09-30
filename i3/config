@@ -198,6 +198,7 @@
   # }}}
 
   bindsym $mod+ctrl+l exec --no-startup-id $i3_scripts/i3exit lock
+  bindsym $mod+backslash exec --no-startup-id "$i3_scripts/random-wallpaper $wallpaper_path"
 
   # Modes {{{
     # Resize {{{
@@ -230,7 +231,9 @@
 #: Choose a random wallpaper
 exec_always --no-startup-id "$i3_scripts/random-wallpaper $wallpaper_path"
 #: Network Manager applet
-#exec_always --no-startup-id "pkill nm-applet ; nm-applet"
+exec_always --no-startup-id "pkill nm-applet ; nm-applet"
+# Battery monitor
+exec_always --no-startup-id "pkill cbatticon; cbatticon"
 #: Blueman applet
 #exec_always --no-startup-id "pkill blueman-applet ; blueman-applet"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

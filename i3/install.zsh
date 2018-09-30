@@ -5,7 +5,7 @@ DIRNAME="$(cd "$(dirname "$0")";pwd -P)"
 
 if [[ `uname` == 'Linux' ]]; then
   echo "We're on linux"
-  sudo pacman -S --needed --noconfirm i3 libmpdclient feh scrot xclip
+  sudo pacman -S --needed --noconfirm i3 libmpdclient feh scrot xclip acpi networkmanager network-manager-applet cbatticon
   yaourt -S --needed --noconfirm polybar light
 
   echo "Creating i3 config directory"
