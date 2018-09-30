@@ -1,0 +1,1 @@
+*/5 * * * * DISPLAY=:1 sh ~/.config/i3/scripts/random-wallpaper ~/Pictures/Wallpapers
