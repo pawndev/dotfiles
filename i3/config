@@ -2,6 +2,8 @@
 
 # Variables {{{
   set $i3_scripts ~/.config/i3/scripts
+  set $wallpaper_path  ~/Pictures/Wallpapers
+  set $screenshot_path ~/Pictures/Screenshots
   set $mod Mod4
   set $up k
   set $down j
@@ -100,10 +102,10 @@
   bindsym $mod+$up focus up
   bindsym $mod+$right focus right
   # alternatively, you can use the cursor keys:
-  bindsym $mod+Left focus left
-  bindsym $mod+Down focus down
-  bindsym $mod+Up focus up
-  bindsym $mod+Right focus right
+  #bindsym $mod+Left focus left
+  #bindsym $mod+Down focus down
+  #bindsym $mod+Up focus up
+  #bindsym $mod+Right focus right
 
   # Move focus windows
   bindsym $mod+Shift+$left move left
@@ -156,6 +158,8 @@
   bindsym $mod+8 workspace $ws8
   bindsym $mod+9 workspace $ws9
   bindsym $mod+0 workspace $ws10
+  bindsym $mod+Left workspace prev
+  bindsym $mod+Right workspace next
 
   # move focused container to workspace
   bindsym $mod+Shift+1 move container to workspace $ws1
@@ -173,6 +177,27 @@
   bindsym $mod+Shift+r reload
   # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
   bindsym $mod+ctrl+r restart
+  # Screenshots {{{
+    # Capture the whole screen
+    bindsym --release Print exec "$i3_scripts/take-screenshot whole $screenshot_path"
+    # Capture a region (with the mouse)
+    bindsym --release Shift+Print exec "$i3_scripts/take-screenshot region $screenshot_path"
+    # Capture the focus window
+    bindsym --release ctrl+Print exec "$i3_scripts/take-screenshot window $screenshot_path"
+  # }}}
+
+  # Screen brightness controls {{{
+    bindsym XF86MonBrightnessUp   exec light -A 10 # increase screen brightness
+    bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
+  # }}}
+
+  # Output sound controls {{{
+    bindsym XF86AudioRaiseVolume exec "amixer -q sset Master 1%+"
+    bindsym XF86AudioLowerVolume exec "amixer -q sset Master 1%-"
+    bindsym XF86AudioMute exec "amixer -q sset Master toggle"
+  # }}}
+
+  bindsym $mod+ctrl+l exec --no-startup-id $i3_scripts/i3exit lock
 
   # Modes {{{
     # Resize {{{
@@ -202,6 +227,12 @@
   # }}}
 # }}}
 
+#: Choose a random wallpaper
+exec_always --no-startup-id "$i3_scripts/random-wallpaper $wallpaper_path"
+#: Network Manager applet
+#exec_always --no-startup-id "pkill nm-applet ; nm-applet"
+#: Blueman applet
+#exec_always --no-startup-id "pkill blueman-applet ; blueman-applet"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # exit i3 (logs you out of your X session)
 # bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
