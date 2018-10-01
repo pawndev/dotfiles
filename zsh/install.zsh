@@ -16,6 +16,9 @@ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/instal
 
 echo "Linking zshrc"
 ln -sf $DIRNAME/zshrc ~/.zshrc
+if [[ ! -a $DIRNAME/variables.zsh ]]; then
+  cp $DIRNAME/variables.zsh.dist $DIRNAME/variables.zsh
+fi
 
 source $ZPLUG_HOME/init.zsh
 
