@@ -58,7 +58,7 @@ font-2 = siji:pixelsize=10;1
 font-3 = Weather Icons:style=Regular:size=10;1
 font-4 = RobotoMono Nerd Font:style=Regular:pixelsize=14;1
 
-modules-left = i3
+modules-left = i3 mpd
 modules-center = date weather
 ;modules-right = filesystem xbacklight pulseaudio memory cpu wlan eth battery temperature powermenu 
 modules-right = filesystem pulseaudio memory cpu battery temperature powermenu 

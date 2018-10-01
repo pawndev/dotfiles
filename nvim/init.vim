@@ -355,6 +355,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'stevearc/vim-arduino'
 Plug 'simnalamburt/vim-mundo'
+Plug 'pawndev/mpc.vim'
 "Plug 'mbbill/undotree'
 "Plug 'sjl/gundo.vim'
 "Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }

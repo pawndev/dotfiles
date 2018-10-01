@@ -5,12 +5,13 @@ DIRNAME="$(cd "$(dirname "$0")";pwd -P)"
 
 if [[ `uname` == 'Linux' ]]; then
   echo "We're on linux"
-  sudo pacman -S --needed --noconfirm mopidy
+  sudo pacman -S --needed --noconfirm mopidy mpc
   #yaourt -S --noconfirm --needed mopidy-spotify
   yaourt -S --needed --noconfirm libspotify
 elif [[ `uname` == 'Darwin' ]]; then
   echo "We're on MacOS"
   brew tap mopidy/mopidy
+  brew install mopidy mpc
 fi
 
 echo "Fix spotify playlists connection"
