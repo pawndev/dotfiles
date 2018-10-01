@@ -14,6 +14,7 @@ elif [[ `uname` == 'Darwin' ]]; then
 fi
 
 echo "Fix spotify playlists connection"
+# https://github.com/mopidy/mopidy-spotify/issues/182#issuecomment-392187937
 git clone -b fix/incompatible_playlists --single-branch git@github.com:BlackLight/mopidy-spotify.git
 
 sudo python2 ./mopidy-spotify/setup.py build install
