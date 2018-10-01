@@ -14,6 +14,8 @@ if [[ `uname` == 'Linux' ]]; then
   mkdir -p ~/.config/polybar
   mkdir -p ~/Pictures/Screenshots
 
+  cp -R $DIRNAME/scripts/assets ~/.config/i3/scripts/
+
   echo "Linking i3 conf"
   ln -sf $DIRNAME/config ~/.config/i3/
   ln -sf $DIRNAME/scripts/i3exit ~/.config/i3/scripts/

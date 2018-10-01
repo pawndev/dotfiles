@@ -228,6 +228,8 @@
   # }}}
 # }}}
 
+# Mopidy
+exec_always --no-startup-id "pkill -9 mopidy ; mopidy"
 #: Choose a random wallpaper
 exec_always --no-startup-id "$i3_scripts/random-wallpaper $wallpaper_path"
 #: Network Manager applet
