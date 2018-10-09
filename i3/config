@@ -236,6 +236,9 @@ exec_always --no-startup-id "$i3_scripts/random-wallpaper $wallpaper_path"
 exec_always --no-startup-id "pkill nm-applet ; nm-applet"
 # Battery monitor
 exec_always --no-startup-id "pkill cbatticon; cbatticon"
+# Dunst
+#exec_always --no-startup-id "pkill dunst ; dunst &"
+exec_always --no-startup-id "pkill dunst ; dunst --config ~/.config/dunst/dunstrc &"
 #: Blueman applet
 #exec_always --no-startup-id "pkill blueman-applet ; blueman-applet"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

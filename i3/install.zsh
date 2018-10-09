@@ -5,7 +5,7 @@ DIRNAME="$(cd "$(dirname "$0")";pwd -P)"
 
 if [[ `uname` == 'Linux' ]]; then
   echo "We're on linux"
-  sudo pacman -S --needed --noconfirm i3 libmpdclient feh scrot xclip acpi networkmanager network-manager-applet cbatticon
+  sudo pacman -S --needed --noconfirm i3 libmpdclient feh scrot xclip acpi networkmanager network-manager-applet cbatticon dunst
   yaourt -S --needed --noconfirm polybar light
 
   echo "Creating i3 config directory"
@@ -13,6 +13,8 @@ if [[ `uname` == 'Linux' ]]; then
   echo "Creating polybar config directory"
   mkdir -p ~/.config/polybar
   mkdir -p ~/Pictures/Screenshots
+  echo "Creating dunst config directory"
+  mkdir -p ~/.config/dunst
 
   cp -R $DIRNAME/scripts/assets ~/.config/i3/scripts/
 
@@ -23,4 +25,5 @@ if [[ `uname` == 'Linux' ]]; then
   ln -sf $DIRNAME/scripts/take-screenshot ~/.config/i3/scripts/
   ln -sf $DIRNAME/polybar/config ~/.config/polybar/
   ln -sf $DIRNAME/polybar/launch.sh ~/.config/polybar/
+  ln -sf $DIRNAME/dunst/dunstrc ~/.config/dunst
 fi
