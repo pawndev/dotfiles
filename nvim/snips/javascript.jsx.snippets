@@ -1,0 +1,113 @@
+snippet imr "import react"
+import React from 'react';
+endsnippet
+
+snippet imrc "import react and component"
+import React, { Component } from 'react';
+endsnippet
+
+snippet impt "import prop-types"
+import PropTypes from 'prop-types';
+endsnippet
+
+snippet cc "class component"
+export default class $1 extends Component {
+	render() {
+		return (
+			$2
+		);
+	}
+}
+endsnippet
+
+snippet ccc "class component state"
+export default class $1 extends Component {
+	constructor(props) {
+		super(props);
+		this.state = { $2 };
+	}
+	render() {
+		return ( $3 );
+	}
+}
+endsnippet
+
+snippet sfc "stateless function component"
+const $1 = props => {
+	return ( $2 );
+};
+
+export default $1;
+endsnippet
+
+snippet cdm "componentDidMount"
+componentDidMount() {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet cwm "componentWilMount"
+componentWillMount() {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet cwrp "componentWillReceiveProps"
+componentWillReceiveProps(nextProps) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet scu "shouldComponentUpdate"
+shouldComponentUpdate(nextProps, nextState) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet cwu "componentWillUpdate"
+componentWillUpdate(nextProps, nextState) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet cdu "componentDidUpdate"
+componentDidUpdate(prevProps, prevState) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet cwun "componentWillUnmount"
+componentWillUnmount() {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet cdc "componentDidCatch"
+componentDidCatch(error, info) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet ss "setState"
+this.setState({ $1: $2 });
+endsnippet
+
+snippet ren "render()"
+render() {
+	return (
+		${0:${VISUAL}}
+	);
+}
+endsnippet
+
+snippet rbase "react base component"
+import React, { Component } from 'react';
+
+export default class $1 {
+	render() {
+		return (
+			${0:${VISUAL}}
+		);
+	}
+}
+endsnippet

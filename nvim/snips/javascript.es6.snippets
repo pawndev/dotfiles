@@ -1,0 +1,21 @@
+snippet imp "import module"
+import $1 from '$2';
+endsnippet
+
+snippet imd "import module using destructuring"
+import { $1 } from '$2'
+endsnippet
+
+snippet ecl "export default class"
+export default class $1 {}
+endsnippet
+
+snippet mutator "add get/set mutators"
+get $1() {
+	return this.$2;
+}
+
+set $1(val) {
+	this.$2 = val;
+}
+endsnippet

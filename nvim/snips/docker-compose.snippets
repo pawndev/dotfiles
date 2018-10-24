@@ -1,0 +1,12 @@
+snippet ranchbase "rancher docker compose base"
+version: '2'
+services:
+	$1:
+		build: ${2:.}
+		labels:
+			"rap.host:$3"
+			"rap.port:$4"
+			"rap.le_host:$3"
+			"rap.le_email:$5"
+endsnippet
+
