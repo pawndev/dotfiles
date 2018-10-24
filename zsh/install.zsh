@@ -5,10 +5,10 @@ DIRNAME="$(cd "$(dirname "$0")";pwd -P)"
 
 if [[ `uname` == 'Linux' ]]; then
   echo "We're on linux"
-  sudo pacman -S --needed --noconfirm zsh
+  sudo pacman -S --needed --noconfirm zsh bat
 elif [[ `uname` == 'Darwin' ]]; then
   echo "We're on MacOS"
-  brew install zplug
+  brew install zplug bat
 fi
 
 echo "Installing zplug...."
