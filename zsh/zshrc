@@ -20,8 +20,8 @@ export VISUAL="nvim"
 export EDITOR="nvim"
 export BULLETTRAIN_EXEC_TIME_ELAPSED=1
 export BULLETTRAIN_STATUS_EXIT_SHOW=true
-export FZF_DEFAULT_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || \
-   cat {} || tree -C {}) 2> /dev/null | head -200'"
+export BAT_THEME="OneHalfDark"
+export FZF_DEFAULT_OPTS="--preview 'bat --color \"always\" {} 2> /dev/null | head -200'"
 export YSU_MODE=ALL
 # zplug
 export NVM_LAZY_LOAD=true
