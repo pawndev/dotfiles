@@ -23,6 +23,8 @@ export BULLETTRAIN_STATUS_EXIT_SHOW=true
 export BAT_THEME="OneHalfDark"
 export FZF_DEFAULT_OPTS="--preview 'bat --color \"always\" {} 2> /dev/null | head -200'"
 export YSU_MODE=ALL
+# golang
+export GOPATH="$HOME/workspace/golang"
 # zplug
 export NVM_LAZY_LOAD=true
 #Theme
@@ -45,6 +47,8 @@ export BULLETTRAIN_PROMPT_ORDER=(
   cmd_exec_time
   go
 )
+
+export PATH="$PATH:$GOPATH/bin"
 # }}}
 
 # Config {{{
