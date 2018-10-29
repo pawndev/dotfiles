@@ -240,6 +240,8 @@ exec_always --no-startup-id "pkill cbatticon; cbatticon"
 exec_always --no-startup-id "pkill compton ; compton -b --config ~/.config/compton/compton.conf"
 # Dunst
 exec_always --no-startup-id "pkill dunst ; dunst --config ~/.config/dunst/dunstrc &"
+# Conky
+exec_always --no-startup-id "pkill conky ; conky -c ~/.config/conky/conky.conf"
 # Blueman applet
 #exec_always --no-startup-id "pkill blueman-applet ; blueman-applet"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
