@@ -27,7 +27,7 @@ alert = ${xrdb:URxvt*color1:#c65f4b}
 inactive = ${xrdb:URxvt*color8}
 
 [bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:}
 width = 100%
 height = 40
 ;offset-x = 1%

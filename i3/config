@@ -15,9 +15,9 @@
   set $bar_font Roboto Mono for Powerline
   set $bar_font_px 12
 
-  set $terminal kitty
-  set $run kitty -e
-  set $editor kitty -e nvim
+  set $terminal alacritty
+  set $run alacritty -e
+  set $editor alacritty -e nvim
 
   set $ws1 1
   set $ws2 2
@@ -241,7 +241,7 @@ exec_always --no-startup-id "pkill compton ; compton -b --config ~/.config/compt
 # Dunst
 exec_always --no-startup-id "pkill dunst ; dunst --config ~/.config/dunst/dunstrc &"
 # Conky
-exec_always --no-startup-id "pkill conky ; conky -c ~/.config/conky/conky.conf"
+#exec_always --no-startup-id "pkill conky ; sleep 5 ; conky -c ~/.config/conky/conky.conf &"
 # Blueman applet
 #exec_always --no-startup-id "pkill blueman-applet ; blueman-applet"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
