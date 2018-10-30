@@ -37,7 +37,7 @@
     set $bg             #292520
     #:  Black
     set $black          #171a1e
-    set $black_rgba     #171a1eCC
+    set $black_rgba     #171a1e
     set $bright_black   #797268
     #:  Red
     set $red            #c65f4b
@@ -61,9 +61,9 @@
     set $white          #e6d0ba
     set $bright_white   #f8f8f1
 
-    set $inner_gaps_px 20
+    set $inner_gaps_px 10
     set $outer_gaps_px 0
-    set $border_px   15
+    set $border_px   5
     set $resize_step 5
 
     hide_edge_borders both
