@@ -303,10 +303,11 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Completion {{{
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
-Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2'
 Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-ultisnips'
+Plug 'ncm2/ncm2-vim-lsp'
 Plug 'mattn/emmet-vim'
 Plug 'raimondi/delimitmate'
 Plug 'docunext/closetag.vim'
@@ -348,7 +349,7 @@ Plug 'pawndev/colour-schemes', {'rtp': 'vim'}
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'dietsche/vim-lastplace'
-Plug 'ervandew/supertab'
+"Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
@@ -421,17 +422,18 @@ color earthsong
   " }}}
 
   " SuperTab {{{
-  let g:SuperTabDefaultCompletionType = "context"
-  let g:SuperTabCrMapping = 0
+  "let g:SuperTabDefaultCompletionType = "context"
+  "let g:SuperTabCrMapping = 0
   " autocomple popup color
   highlight Pmenu guibg=brown gui=bold
   " }}}
 
   " UltiSnips {{{
+  inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
   let g:UltiSnipsJumpForwardTrigger = "<c-j>"
   let g:UltiSnipsJumpBackwardTrigger  = "<c-k>"
   let g:UltiSnipsRemoveSelectModeMappings = 0
-  let g:UltiSnipsExpandTrigger = '<C-b>'
+  let g:UltiSnipsExpandTrigger = '<tab>'
   let g:UltiSnipsSnippetDirectories = ['snips']
   " }}}
 
