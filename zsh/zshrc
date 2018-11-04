@@ -27,6 +27,7 @@ export YSU_MODE=ALL
 export GOPATH="$HOME/workspace/golang"
 # zplug
 export NVM_LAZY_LOAD=true
+export NVM_AUTO_USE=true
 #Theme
 prompt_vi_mode() {
   case ${KEYMAP} in
@@ -85,6 +86,7 @@ alias vim="nvim"
 alias re-zsh="source ~/.zshrc"
 alias zshrc="nvim ~/.zshrc"
 alias vimrc="nvim ~/.config/nvim/init.vim"
+alias rk="rancher kubectl"
 # Common aliases
 alias disk="df -H | grep -vE '^Filesystem|tmpfs|cdrom'"
 alias :q="exit"
