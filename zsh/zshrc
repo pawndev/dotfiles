@@ -26,7 +26,7 @@ export YSU_MODE=ALL
 # golang
 export GOPATH="$HOME/workspace/golang"
 # zplug
-export NVM_LAZY_LOAD=true
+export NVM_LAZY_LOAD=false
 export NVM_AUTO_USE=true
 #Theme
 prompt_vi_mode() {

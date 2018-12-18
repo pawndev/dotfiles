@@ -27,7 +27,7 @@ mkdir -p ~/.config/nvim/backups
 
 echo "Linking nvimrc"
 ln -sf $DIRNAME/init.vim ~/.config/nvim/
-ln -sf $DIRNAME/snips/* ~/.config/nvim/snips/
+cp $DIRNAME/snips/* ~/.config/nvim/snips/
 
 echo "Install vim plugin"
 nvim +PlugInstall +qa
