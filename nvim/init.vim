@@ -248,6 +248,31 @@ function MyTabLine()
         endif
         return s
       endfunction
+
+function! OuicarInsertPath()
+  let p = split(expand('%:p:h'), '/')
+  if (index(p, 'src') >= 0)
+    let src = index(p, 'app')
+    let c = ["ouicar"] + p[src+1:]
+    return join(c, '/')
+  endif
+endfunction
+
+function! InsertBeforeCursor(c)
+  execute 'normal! i'.a:c
+endfunction
+
+
+function! InsertAfterCursor(c)
+  execute 'normal! a'.a:c
+endfunction
+
+function! InsertEndOfLine(c)
+  let save_pos = getpos(".")
+  execute 'normal! A'.a:c
+  call setpos('.', save_pos)
+endfunction
+
 " }}}
 
 " Config {{{
@@ -498,6 +523,12 @@ nnoremap <silent> [[ :call PrevListItem()<CR>
 nnoremap <silent> ]] :call NextListItem()<CR>
 
 " Custom bindings
+
+nnoremap <silent> <leader>; :call InsertEndOfLine(";")<CR>
+
+" Ouicar custom bindings
+nnoremap <silent> <leader>o :call InsertBeforeCursor(OuicarInsertPath())<CR>
+nnoremap <silent> <leader>O :call InsertAfterCursor(OuicarInsertPath())<CR>
 
 vnoremap <silent><leader>f <Esc>:FZF -q <C-R>=GetVisualSelection()<CR>
 nnoremap <silent><leader>f <Esc>:FZF -q <C-R>=expand("<cword>")<CR>
