@@ -324,8 +324,8 @@ color earthsong
   \}
 
   let g:ale_fixers = {
-    \'javascript': ['prettier', 'eslint', 'flow'],
-    \'javascript.jsx': ['prettier', 'eslint', 'flow'],
+    \'javascript': ['prettier', 'eslint'],
+    \'javascript.jsx': ['prettier', 'eslint'],
   \}
   " }}}
 
