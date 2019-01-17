@@ -241,6 +241,8 @@ Plug 'SirVer/ultisnips'
 Plug 'davidhalter/jedi'
 Plug 'ncm2/ncm2-jedi'
 
+Plug 'felixfbecker/php-language-server', {'do': 'composer install && composer run-script parse-stubs'}
+
 Plug 'mattn/emmet-vim'
 Plug 'raimondi/delimitmate'
 Plug 'docunext/closetag.vim'
@@ -326,6 +328,11 @@ color earthsong
   let g:ale_fixers = {
     \'javascript': ['prettier', 'eslint'],
     \'javascript.jsx': ['prettier', 'eslint'],
+  \}
+
+  let g:ale_linters = {
+    \'javascript': ['prettier', 'eslint', 'flow'],
+    \'javascript.jsx': ['prettier', 'eslint', 'flow'],
   \}
   " }}}
 
@@ -423,6 +430,14 @@ color earthsong
         "\ 'whitelist': ['typescript', 'javascript', 'javascript.jsx']
         "\ })
   "endif
+  " }}}
+
+  " php {{{
+  au User lsp_setup call lsp#register_server({
+     \ 'name': 'php-language-server',
+     \ 'cmd': {server_info->['php', expand('~/.config/nvim/plugged/php-language-server/bin/php-language-server.php')]},
+     \ 'whitelist': ['php'],
+   \ })
   " }}}
 
   " typescript {{{
