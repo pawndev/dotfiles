@@ -87,6 +87,11 @@
   popup_during_fullscreen smart
 # }}}
 
+# Rules {{{
+  #for_window [class="^float_term$"] floating enable, move absolute position center
+  for_window [class="^float_term$"] floating enable
+# }}}
+
 # Keybindings {{{
   bindsym $mod+Return exec $terminal
   bindsym $mod+Shift+q kill
