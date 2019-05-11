@@ -14,11 +14,15 @@ fi
 echo "Installing zplug...."
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
+mkdir -p ~/bin
+
 echo "Linking zshrc"
 ln -sf $DIRNAME/zshrc ~/.zshrc
 if [[ ! -a $DIRNAME/variables.zsh ]]; then
   cp $DIRNAME/variables.zsh.dist $DIRNAME/variables.zsh
 fi
+
+cp $DIRNAME/bin/* ~/bin/
 
 source $ZPLUG_HOME/init.zsh
 
