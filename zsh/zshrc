@@ -49,7 +49,7 @@ export BULLETTRAIN_PROMPT_ORDER=(
   go
 )
 
-export PATH="$PATH:$GOPATH/bin:$HOME/.config/composer/vendor/bin:$HOME/.composer/vendor/bin"
+export PATH="$PATH:$GOPATH/bin:$HOME/.config/composer/vendor/bin:$HOME/.composer/vendor/bin:$HOME/bin"
 # }}}
 
 # Config {{{
