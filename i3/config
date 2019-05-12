@@ -239,6 +239,8 @@ exec_always --no-startup-id "pkill -9 mopidy ; mopidy"
 exec_always --no-startup-id "$i3_scripts/random-wallpaper $wallpaper_path"
 #: Network Manager applet
 exec_always --no-startup-id "pkill nm-applet ; nm-applet"
+#: Bluetooth Manager applet
+exec_always --no-startup-id "pkill blueman-applet ; blueman-applet"
 # Battery monitor
 exec_always --no-startup-id "pkill cbatticon; cbatticon"
 # Compton

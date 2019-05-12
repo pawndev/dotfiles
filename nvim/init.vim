@@ -276,10 +276,11 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 "Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/rainbow_parentheses.vim'
 "Plug 'ryanoasis/vim-devicons'
-Plug 'pawndev/colour-schemes', {'rtp': 'vim'}
+"Plug 'pawndev/colour-schemes', {'rtp': 'vim'}
+"Plug 'tyrannicaltoucan/vim-quantum'
+"Plug 'tyrannicaltoucan/vim-deep-space'
+"Plug 'ayu-theme/ayu-vim'
 Plug 'rakr/vim-one'
-Plug 'tyrannicaltoucan/vim-quantum'
-Plug 'tyrannicaltoucan/vim-deep-space'
 " }}}
 
 " Utilities {{{
@@ -295,6 +296,9 @@ Plug 'stevearc/vim-arduino'
 Plug 'simnalamburt/vim-mundo'
 Plug 'pawndev/mpc.vim'
 Plug 'Timoses/vim-venu'
+" to configure vim-venu
+" install and config https://github.com/vimwiki/vimwiki
+"
 "Plug 'mbbill/undotree'
 "Plug 'sjl/gundo.vim'
 "Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
@@ -304,16 +308,15 @@ call plug#end()
 " }}}
 
 " Theme {{{
-"colorscheme earthsong
-"color earthsong
 "
-" vim one
+" vim one {{{
 colorscheme one
 let g:airline_theme='one'
 set background=dark
 let g:one_allow_italics = 1
+" }}}
 "
-" vim quantum
+" vim quantum {{{
 "set background=light
 "set termguicolors
 "colorscheme quantum
@@ -321,8 +324,9 @@ let g:one_allow_italics = 1
 "let g:lightline = {
       "\ 'colorscheme': 'quantum',
       "\ }
+" }}}
 "
-" vim deep-space
+" vim deep-space {{{
 "set background=dark
 "set termguicolors
 "colorscheme deep-space
@@ -331,6 +335,20 @@ let g:one_allow_italics = 1
 "let g:lightline = {
       "\ 'colorscheme': 'deepspace',
       "\ }
+" }}}
+"
+" Earthsong {{{
+"colorscheme earthsong
+"color earthsong
+" }}}
+"
+" Ayu {{{
+"set termguicolors
+"let ayucolor="light"
+"let ayucolor="mirage"
+"let ayucolor="dark"
+"colorscheme ayu
+" }}}
 " }}}
 
 " PluginConfig {{{
@@ -527,6 +545,7 @@ nnoremap <silent> [[ :call PrevListItem()<CR>
 nnoremap <silent> ]] :call NextListItem()<CR>
 
 " Custom bindings
+nnoremap <esc><esc> :noh<return>
 
 nnoremap <silent> <leader>; :call InsertEndOfLine(";")<CR>
 
