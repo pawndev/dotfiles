@@ -1,15 +1,8 @@
---[[
- ▄▄▄· ▄▄▄   ▄▄·  ▄ .▄▄▄▌   ▄▄▄· ▄▄▄▄· .▄▄ ·
-▐█ ▀█ ▀▄ █·▐█ ▌▪██▪▐███•  ▐█ ▀█ ▐█ ▀█▪▐█ ▀.
-▄█▀▀█ ▐▀▀▄ ██ ▄▄██▀▐███▪  ▄█▀▀█ ▐█▀▀█▄▄▀▀▀█▄
-▐█ ▪▐▌▐█•█▌▐███▌██▌▐▀▐█▌▐▌▐█ ▪▐▌██▄▪▐█▐█▄▪▐█
- ▀  ▀ .▀  ▀·▀▀▀ ▀▀▀ ·.▀▀▀  ▀  ▀ ·▀▀▀▀  ▀▀▀▀
---]]
-
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local xrdb = xresources.get_current_theme()
+-- local xrdb = {}
 local gears = require("gears")
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
@@ -22,6 +15,7 @@ local tip = "~/.config/awesome/themes/archlabs/titlebar/"
 -- theme.wallpaper = gears.filesystem.get_configuration_dir() .. "wallpapers/minimal_space.png"
 
 -- Load ~/.Xresources colors and set fallback colors
+-- deep-grey
 theme.xbackground = xrdb.background or "#1c2023"
 theme.xforeground = xrdb.foreground or "#E1E1E1"
 theme.xcolor0 = xrdb.color0 or "#1c2023"
@@ -40,6 +34,67 @@ theme.xcolor12 = xrdb.color12 or "#8fa1b3"
 theme.xcolor13 = xrdb.color13 or "#b48ead"
 theme.xcolor14 = xrdb.color14 or "#96b5b4"
 theme.xcolor15 = xrdb.color15 or "#c0c5ce"
+
+-- lovelace
+-- theme.xbackground = xrdb.background or "#1D1F28"
+-- theme.xforeground = xrdb.foreground or "#FDFDFD"
+-- theme.xcolor0 = xrdb.color0 or "#282A36"
+-- theme.xcolor1 = xrdb.color1 or "#F37F97"
+-- theme.xcolor2 = xrdb.color2 or "#5ADECD"
+-- theme.xcolor3 = xrdb.color3 or "#F2A272"
+-- theme.xcolor4 = xrdb.color4 or "#8897F4"
+-- theme.xcolor5 = xrdb.color5 or "#C574DD"
+-- theme.xcolor6 = xrdb.color6 or "#79E6F3"
+-- theme.xcolor7 = xrdb.color7 or "#FDFDFD"
+-- theme.xcolor8 = xrdb.color8 or "#414458"
+-- theme.xcolor9 = xrdb.color9 or "#FF4971"
+-- theme.xcolor10 = xrdb.color10 or  "#18E3C8"
+-- theme.xcolor11 = xrdb.color11 or  "#FF8037"
+-- theme.xcolor12 = xrdb.color12 or  "#556FFF"
+-- theme.xcolor13 = xrdb.color13 or  "#B043D1"
+-- theme.xcolor14 = xrdb.color14 or  "#3FDCEE"
+-- theme.xcolor15 = xrdb.color15 or "#BEBEC1"
+
+-- manta
+-- theme.xbackground = xrdb.background or	"#1E2541"
+-- theme.xforeground = xrdb.foreground or	"#EEFFFF"
+-- theme.xcolor0 = xrdb.color0 or	"#1E2541"
+-- theme.xcolor1 = xrdb.color1 or	"#F0719B"
+-- theme.xcolor2 = xrdb.color2 or	"#5AF7B0"
+-- theme.xcolor3 = xrdb.color3 or	"#FFA56B"
+-- theme.xcolor4 = xrdb.color4 or	"#57C7FF"
+-- theme.xcolor5 = xrdb.color5 or	"#C792EA"
+-- theme.xcolor6 = xrdb.color6 or	"#89DDFF"
+-- theme.xcolor7 = xrdb.color7 or	"#EEFFFF"
+-- theme.xcolor8 = xrdb.color8 or	"#354274"
+-- theme.xcolor9 = xrdb.color9 or	"#F02E6E"
+-- theme.xcolor10 = xrdb.color10 or	"#2CE592"
+-- theme.xcolor11 = xrdb.color11 or	"#FF8537"
+-- theme.xcolor12 = xrdb.color12 or	"#1DA0E2"
+-- theme.xcolor13 = xrdb.color13 or	"#A742EA"
+-- theme.xcolor14 = xrdb.color14 or	"#47BAE8"
+-- theme.xcolor15 = xrdb.color15 or	"#DEE6E7"
+-- theme.xcolor16 = awesome.xrdb_get_value("", "color16") or	"#2A335A"
+
+-- skyfall
+-- theme.xbackground = xrdb.background or "#282F37"
+-- theme.xforeground = xrdb.foreground or "#F1FCF9"
+-- theme.xcolor0     = xrdb.color0     or "#20262C"
+-- theme.xcolor1     = xrdb.color1     or "#DB86BA"
+-- theme.xcolor2     = xrdb.color2     or "#74DD91"
+-- theme.xcolor3     = xrdb.color3     or "#E49186"
+-- theme.xcolor4     = xrdb.color4     or "#75DBE1"
+-- theme.xcolor5     = xrdb.color5     or "#B4A1DB"
+-- theme.xcolor6     = xrdb.color6     or "#9EE9EA"
+-- theme.xcolor7     = xrdb.color7     or "#F1FCF9"
+-- theme.xcolor8     = xrdb.color8     or "#465463"
+-- theme.xcolor9     = xrdb.color9     or "#D04E9D"
+-- theme.xcolor10    = xrdb.color10    or "#4BC66D"
+-- theme.xcolor11    = xrdb.color11    or "#DB695B"
+-- theme.xcolor12    = xrdb.color12    or "#3DBAC2"
+-- theme.xcolor13    = xrdb.color13    or "#825ECE"
+-- theme.xcolor14    = xrdb.color14    or "#62CDCD"
+-- theme.xcolor15 = xrdb.color15 or "#E0E5E5"
 
 -- RBGA
 local transparent = "#00000000"
@@ -261,6 +316,12 @@ theme.titlebar_maximized_button_normal_inactive_hover = tip .. "maximized_normal
 theme.titlebar_maximized_button_focus_inactive_hover  = tip .. "maximized_focus_inactive_hover.svg"
 theme.titlebar_maximized_button_normal_active_hover = tip .. "maximized_normal_active_hover.svg"
 theme.titlebar_maximized_button_focus_active_hover  = tip .. "maximized_focus_active_hover.svg"
+
+-- Exit screen
+theme.exit_screen_bg = theme.xcolor0 .. "CC"
+theme.exit_screen_fg = theme.xcolor7
+theme.exit_screen_font = "sans 20"
+theme.exit_screen_icon_size = dpi(180)
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.

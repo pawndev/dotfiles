@@ -3,7 +3,7 @@
 OS=$(uname)
 DIRNAME="$(cd "$(dirname "$0")";pwd -P)"
 
-sudo pacman -S --needed --noconfirm awesomemxfce4-power-manager exo playerctl xorg-xbacklight pamixer pamac inotify-tools awesome
+sudo pacman -S --needed --noconfirm awesomemxfce4-power-manager exo playerctl xorg-xbacklight pamixer pamac inotify-tools awesome fortune-mod
 yaourt -S --needed --noconfirm networkmanager-dmenu
 
 #cp -rT $DIRNAME/config/ ~
@@ -11,5 +11,6 @@ yaourt -S --needed --noconfirm networkmanager-dmenu
 rsync -aP --exclude=awesome $DIRNAME/config/ ~
 
 ln -sf $DIRNAME/config/.config/awesome ~/.config/
+ln -sf $DIRNAME/config/.Xresources ~/.Xresources
 
 echo "You're done."

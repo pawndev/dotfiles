@@ -49,7 +49,7 @@ end
 -------------  Variable definitions  ----------------
 -----------------------------------------------------
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/archlabs/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/pawn/theme.lua")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 
@@ -473,7 +473,7 @@ mybatterywidget:buttons(
 ))
 add_clickable_effect(mybatterywidget)
 
-
+local start_screen = require("noodle.start_screen")
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -840,10 +840,12 @@ globalkeys = gears.table.join(
     -- Toggle sidebar
     awful.key({ modkey }, "Tab", function() sidebar.visible = not sidebar.visible end,
               {description = "show or hide sidebar", group = "awesome"}),
+    awful.key({ modkey, "Shift" }, "w", function() start_screen_show() end,
+              {description = "Toggle startscreen", group = "awesome"}),
 
     -- Main menu
-    awful.key({ modkey, "Shift"  }, "w", function () mymainmenu:show() end,
-              {description = "show main menu", group = "awesome"}),
+    -- awful.key({ modkey, "Shift"  }, "w", function () mymainmenu:show() end,
+    --           {description = "show main menu", group = "awesome"}),
 
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
@@ -1119,7 +1121,7 @@ clientkeys = gears.table.join(
               {description = "center", group = "client"}),
 
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
-              {description = "toggle keep on top", group = "client"})
+              {description = "toggle keep on top", group = "client"})   
 )
 
 -- Bind all key numbers to tags.
