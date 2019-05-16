@@ -329,11 +329,11 @@ local function create_url(name, path)
     url:buttons(
       gears.table.join(
         awful.button({ }, 1, function ()
-            awful.spawn(browser.." "..path)
+            awful.spawn(web_browser.." "..path)
             start_screen_hide()
         end),
         awful.button({ }, 3, function ()
-            awful.spawn(browser.." -new-window "..path)
+            awful.spawn(web_browser.." -new-window "..path)
             start_screen_hide()
         end)
     ))

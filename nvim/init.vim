@@ -241,7 +241,7 @@ Plug 'SirVer/ultisnips'
 Plug 'davidhalter/jedi'
 Plug 'ncm2/ncm2-jedi'
 
-Plug 'felixfbecker/php-language-server', {'do': 'composer install && composer run-script parse-stubs'}
+"Plug 'felixfbecker/php-language-server', {'do': 'composer install && composer run-script parse-stubs'}
 
 Plug 'mattn/emmet-vim'
 Plug 'raimondi/delimitmate'
@@ -277,6 +277,9 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'kien/rainbow_parentheses.vim'
 "Plug 'ryanoasis/vim-devicons'
 Plug 'pawndev/colour-schemes', {'rtp': 'vim'}
+Plug 'rakr/vim-one'
+Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'tyrannicaltoucan/vim-deep-space'
 " }}}
 
 " Utilities {{{
@@ -301,8 +304,33 @@ call plug#end()
 " }}}
 
 " Theme {{{
-colorscheme earthsong
-color earthsong
+"colorscheme earthsong
+"color earthsong
+"
+" vim one
+colorscheme one
+let g:airline_theme='one'
+set background=dark
+let g:one_allow_italics = 1
+"
+" vim quantum
+"set background=light
+"set termguicolors
+"colorscheme quantum
+"let g:airline_theme='quantum'
+"let g:lightline = {
+      "\ 'colorscheme': 'quantum',
+      "\ }
+"
+" vim deep-space
+"set background=dark
+"set termguicolors
+"colorscheme deep-space
+"let g:deepspace_italics=1
+"let g:airline_theme='deep_space'
+"let g:lightline = {
+      "\ 'colorscheme': 'deepspace',
+      "\ }
 " }}}
 
 " PluginConfig {{{

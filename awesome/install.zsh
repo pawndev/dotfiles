@@ -3,8 +3,8 @@
 OS=$(uname)
 DIRNAME="$(cd "$(dirname "$0")";pwd -P)"
 
-sudo pacman -S --needed --noconfirm awesomemxfce4-power-manager exo playerctl xorg-xbacklight pamixer pamac inotify-tools awesome fortune-mod
-yaourt -S --needed --noconfirm networkmanager-dmenu
+sudo pacman -S --needed --noconfirm xfce4-power-manager exo playerctl xorg-xbacklight pamixer pamac inotify-tools awesome fortune-mod
+yay -S --needed --noconfirm networkmanager-dmenu xst-git
 
 #cp -rT $DIRNAME/config/ ~
 
