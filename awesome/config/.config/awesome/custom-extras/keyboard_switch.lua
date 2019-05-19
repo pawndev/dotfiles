@@ -86,9 +86,13 @@ function indicator:set(i)
     self.index = (i-1) % #(self.layouts) + 1
     self.current = self.layouts[self.index]
     self:update_text()
+    local compose_option = ""
+    if (self.current.layout.compose) then
+      compose_option = "-option compose:" .. compose
+    end
     -- execute command
-    os.execute(self.current.command or ("%s %s %s"):format(
-        self.cmd, self.current.layout, self.current.variant or ""))
+    os.execute(self.current.command or ("%s %s %s %s"):format(
+        self.cmd, self.current.layout, self.current.variant or "", compose_option))
     os.execute("xmodmap ~/.Xmodmap")
 end
 
@@ -114,12 +118,14 @@ function indicator:get()
     local status = readcommand(self.cmd .. " -query")
     local layout = trim(string.match(status, "layout:([^\n]*)"))
     local variant = trim(string.match(status, "variant:([^\n]*)"))
+    local compose = trim(string.match(status, "compose:([^\n][^,]+)"))
     -- find layout in self.layouts
     local index = findindex(self.layouts, function (v)
-        return v.layout == layout and v.variant == variant
+        return v.layout == layout and v.variant == variant and v.compose == compose
     end)
     return index, index and self.layouts[tonumber(index)] or {
         attr    = 'color="yellow"',
+        compose = compose,
         layout  = layout,
         variant = variant,
         name    = variant and layout.."/"..variant or layout,
