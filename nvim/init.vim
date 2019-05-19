@@ -296,6 +296,7 @@ Plug 'stevearc/vim-arduino'
 Plug 'simnalamburt/vim-mundo'
 Plug 'pawndev/mpc.vim'
 Plug 'Timoses/vim-venu'
+Plug 'chrisbra/Colorizer'
 " to configure vim-venu
 " install and config https://github.com/vimwiki/vimwiki
 "
