@@ -71,11 +71,11 @@
 "playerctl play-pause"
   b:12
 
-"playerctl next"
-  b:7
+#"playerctl next"
+  #b:7
 
-"playerctl previous"
-  b:6
+#"playerctl previous"
+  #b:6
 ##################################
 # End of xbindkeys configuration #
 ##################################
