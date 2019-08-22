@@ -6,6 +6,7 @@ DIRNAME="$(cd "$(dirname "$0")";pwd -P)"
 if [[ `uname` == 'Linux' ]]; then
   echo "We're on linux"
   sudo pacman -S --needed --noconfirm rofi
+  yay -S rofi-1pass rofi-autorandr
 
   echo "Creating rofi conf dir"
   mkdir -p ~/.config/rofi

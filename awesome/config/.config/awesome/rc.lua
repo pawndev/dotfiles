@@ -56,10 +56,11 @@ local dpi = xresources.apply_dpi
 -- Default applications
 -- terminal = "xterm"
 terminal = "exo-open --launch TerminalEmulator"
+tmux = 'alacritty -e tmux'
 web_browser = "exo-open --launch WebBrowser"
 file_manager = "exo-open --launch FileManager"
 editor = os.getenv("EDITOR") or "nvim"
-editor_cmd = terminal .. " -e " .. editor
+editor_cmd = tmux .. " -c " .. editor
 -- editor_cmd = "exo-open "
 -- Duckduckgo
 -- web_search_cmd = "exo-open https://duckduckgo.com/?q="
@@ -895,7 +896,7 @@ globalkeys = gears.table.join(
             {description = "take screenshot window", group = "launcher"}),
     awful.key({ "Mod4" }, "space", function () awful.spawn.with_shell("rofi -show combi") end,
             {description = "rofi combi", group = "launcher"}),
-    awful.key({ "Mod4", "Shift" }, "space", function () awful.spawn.with_shell("rofi -show") end,
+    awful.key({ "Mod4", "Shift" }, "space", function () awful.spawn.with_shell("rofi -modi 1pass:rofi-1pass -show 1pass") end,
             {description = "rofi", group = "launcher"}),
 
     -- Audio
@@ -1262,6 +1263,12 @@ awful.rules.rules = {
     { rule_any = {type = { "dialog" }
       }, properties = { placement = awful.placement.centered, floating = true, ontop = true, titlebars_enabled = true }
     },
+    { rule = { class = "pinentry" },
+      properties = { floating = true, ontop = true },
+      callback = awful.placement.top },
+    { rule = { class = "gcr-prompter" },
+      properties = { focus = true, floating = true, ontop = true },
+      callback = awful.placement.top },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
     -- { rule = { class = "Firefox" },

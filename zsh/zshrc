@@ -1,4 +1,9 @@
 # Sources {{{
+if [[ $DISPLAY ]]; then
+    # If not running interactively, do not do anything
+    [[ $- != *i* ]] && return
+    [[ -z "$TMUX" ]] && exec tmux
+fi
 source ~/.dotfiles/zsh/variables.zsh
 # }}}
 
@@ -27,7 +32,7 @@ export YSU_MODE=ALL
 export GOPATH="$HOME/workspace/golang"
 # zplug
 export NVM_LAZY_LOAD=false
-export NVM_AUTO_USE=true
+export NVM_AUTO_USE=false
 #Theme
 prompt_vi_mode() {
   case ${KEYMAP} in
@@ -87,6 +92,7 @@ alias re-zsh="source ~/.zshrc"
 alias zshrc="nvim ~/.dotfiles/zsh/zshrc"
 alias vimrc="nvim ~/.dotfiles/nvim/init.vim"
 alias rk="rancher kubectl"
+alias kc="kubectl"
 alias v="nvim ."
 # Common aliases
 alias disk="df -H | grep -vE '^Filesystem|tmpfs|cdrom'"
@@ -144,6 +150,15 @@ function vzf() {
 	fi
 }
 
+function op-sign() {
+  eval $(op signin my)
+}
+
+function opon() {
+  token=$(op signin my --output=raw)
+  echo $token > ~/.op/session
+}
+
 function myip() {
     curl ipecho.net/plain; echo
 }
@@ -193,8 +208,18 @@ function error() {
 }
 
 function seal() {
-  echo -e "\n$COL_GREENᶘᵒᴥᵒᶅ$COL_RESET - "$1
+  echo -e "\n$COL_GREEN""ᶘᵒᴥᵒᶅ""$COL_RESET - "$1
 }
 
 # }}}
 
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/pawndev/workspace/marcel/marcel-db/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/pawndev/workspace/marcel/marcel-db/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/pawndev/workspace/marcel/marcel-db/node_modules/tabtab/.completions/sls.zsh ]] && . /home/pawndev/workspace/marcel/marcel-db/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /home/pawndev/workspace/marcel/marcel-db/node_modules/tabtab/.completions/slss.zsh ]] && . /home/pawndev/workspace/marcel/marcel-db/node_modules/tabtab/.completions/slss.zsh
