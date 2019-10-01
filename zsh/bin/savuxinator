@@ -1,0 +1,77 @@
+#/bin/bash
+
+#LIST_WINDOWS=${tmux list-windows}
+
+#tmux list-windows\
+  #| while read -r window command pane_number pane size layout ; do
+    #echo "$window - $command - $pane_number - $pane - $size - $layout"
+  #done
+TMUXINATOR_FOLDER=${TMUXINATOR_FOLDER:-"$HOME/.config/tmuxinator"} 
+filename=${1-"boulou2"}
+
+TMUX_SESSION_NAME_DIRTY=$(tmux list-windows -F "#{session_name}")
+OIFS="$IFS"
+IFS=' '
+read -a session_name <<< "${TMUX_SESSION_NAME_DIRTY}"
+IFS="$OIFS"
+
+filename=${1:-$session_name}
+filename=${filename:-"boulou2"}
+
+ALL_WINDOWS=$(tmux list-windows -F "#{window_layout}")
+ALL_PANES_WITH_LAST_CMD=$(tmux list-panes -s -F "#{pane_current_command}")
+#ALL_PANES_WITH_LAST_CMD=$(tmux list-panes -as -F "#{window_id} #{pane_id} #{pane_current_command}")
+
+# split ALL_WINDOWS by \n
+# split by ' '
+# get layout of each windows, and store it in object/array/tuple
+# split ALL_PANES_WITH_CMD by \n
+# split by ' '
+# store it in Array of object, or array of array or array of tupe like this :
+# ```bash
+# [
+#   [pane1_command, pane2_command],
+#   [pane3_windows2_command]
+# ]
+#
+
+#echo "$ALL_WINDOWS"
+declare -a windows_arr
+while read -r line; do
+    #echo "$line"
+    windows_arr+=($line)
+done <<< "$ALL_WINDOWS"
+echo $windows_arr
+
+exit
+
+#echo $ALL_PANES_WITH_LAST_CMD
+
+while read -r line; do
+    echo "$line"
+done <<< "$ALL_PANES_WITH_LAST_CMD"
+#readarray -td, array <<<"$ALL_PANES_WITH_LAST_CMD"; declare -p array;
+
+cat > $TMUXINATOR_FOLDER/$filename.yml <<EOL
+
+# /home/pawndev/.config/tmuxinator/${filename}.yml
+
+name: ${filename}
+root: ~/
+
+windows:
+EOL
+for i in "${arr[@]}"
+do
+   echo "$i"
+cat >> $TMUXINATOR_FOLDER/$filename.yml << EOL
+  - ${cmd_1}:
+      layout: main-vertical
+      panes:
+        - vim
+        - guard
+  - server: bundle exec rails s
+  - logs: tail -f log/development.log
+EOL
+done
+

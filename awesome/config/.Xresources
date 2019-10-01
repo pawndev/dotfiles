@@ -6,7 +6,7 @@ Xft.rgba: rgb
 Xft.autohint: false
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
-st.font: Roboto Mono for Powerline:pixelsize=14:antialias=true:autohint=false
+st.font: Roboto Mono for Powerline:pixelsize=12:antialias=true:autohint=false
 
 xcursor.theme:            Vanilla-DMZ
 xscreensaver.fade:   false
@@ -132,7 +132,7 @@ xscreensaver.unfade: false
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
-URxvt.internalBorder: 24
+!URxvt.internalBorder: 24
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: false
 URxvt.saveline: 2048

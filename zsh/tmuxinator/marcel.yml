@@ -1,0 +1,17 @@
+---
+name: marcel
+project_root: "/home/pawndev/workspace/marcel/marcel-backend"
+windows:
+- server:
+    layout: cedd,237x67,0,0,0
+    panes:
+      - cd /home/pawndev/workspace/marcel/marcel-backend && yarn build:libs && yarn workspace @marcel/gateway start
+- editor:
+    layout: c239,237x67,0,0{118x67,0,0,1,118x67,119,0,2}
+    panes:
+    - cd /home/pawndev/workspace/marcel/marcel-backend && vim .
+    - cd /home/pawndev/workspace/marcel/marcel-backend && vim .
+- shell:
+    layout: cee0,237x67,0,0,3
+    panes:
+    - cd /home/pawndev/workspace/marcel/marcel-backend

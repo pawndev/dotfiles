@@ -6,6 +6,7 @@ DIRNAME="$(cd "$(dirname "$0")";pwd -P)"
 if [[ `uname` == 'Linux' ]]; then
   echo "We're on linux"
   sudo pacman -S --needed --noconfirm zsh bat jq tmux
+  yay -S tmuxinator
 elif [[ `uname` == 'Darwin' ]]; then
   echo "We're on MacOS"
   brew install zplug bat jq tmux
@@ -20,6 +21,7 @@ mkdir -p ~/.tmux/plugins
 echo "Linking zshrc"
 ln -sf $DIRNAME/tmux.conf ~/.tmux.conf
 ln -sf $DIRNAME/zshrc ~/.zshrc
+cp $DIRNAME/tmuxinator/* ~/.config/tmuxinator/
 if [[ ! -a $DIRNAME/variables.zsh ]]; then
   cp $DIRNAME/variables.zsh.dist $DIRNAME/variables.zsh
 fi

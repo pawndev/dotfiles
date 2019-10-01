@@ -373,15 +373,20 @@ let g:one_allow_italics = 1
     \'.*node_modules/.*$': {'ale_enabled': 0},
   \}
 
+
   let g:ale_fixers = {
-    \'javascript': ['prettier', 'eslint'],
-    \'javascript.jsx': ['prettier', 'eslint'],
+    \'typescript': ['tslint', 'eslint']
   \}
 
-  let g:ale_linters = {
-    \'javascript': ['prettier', 'eslint', 'flow'],
-    \'javascript.jsx': ['prettier', 'eslint', 'flow'],
-  \}
+  "let g:ale_fixers = {
+    "\'javascript': ['prettier', 'eslint'],
+    "\'javascript.jsx': ['prettier', 'eslint'],
+  "\}
+
+  "let g:ale_linters = {
+    "\'javascript': ['prettier', 'eslint', 'flow'],
+    "\'javascript.jsx': ['prettier', 'eslint', 'flow'],
+  "\}
   " }}}
 
   " closetag {{{

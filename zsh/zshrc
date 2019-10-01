@@ -30,6 +30,7 @@ export FZF_DEFAULT_OPTS="--preview 'bat --color \"always\" {} 2> /dev/null | hea
 export YSU_MODE=ALL
 # golang
 export GOPATH="$HOME/workspace/golang"
+export GOROOT="$HOME/workspace/golang/bin"
 # zplug
 export NVM_LAZY_LOAD=false
 export NVM_AUTO_USE=false
@@ -54,7 +55,7 @@ export BULLETTRAIN_PROMPT_ORDER=(
   go
 )
 
-export PATH="$PATH:$GOPATH/bin:$HOME/.config/composer/vendor/bin:$HOME/.composer/vendor/bin:$HOME/bin"
+export PATH="$PATH:$GOPATH/bin:$HOME/.config/composer/vendor/bin:$HOME/.composer/vendor/bin:$HOME/bin:$HOME/.local/bin"
 # }}}
 
 # Config {{{
@@ -78,8 +79,9 @@ zplug "plugins/docker",   from:oh-my-zsh
 zplug "plugins/cp",   from:oh-my-zsh
 #zplug "plugins/common-aliases",   from:oh-my-zsh
 zplug "MichaelAquilina/zsh-you-should-use"
-zplug "caiogondim/bullet-train.zsh", use:bullet-train.zsh-theme
+#zplug "caiogondim/bullet-train.zsh", use:bullet-train.zsh-theme
 zplug "lukechilds/zsh-nvm"
+zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 
 zplug load
 # /zplug
@@ -93,6 +95,7 @@ alias zshrc="nvim ~/.dotfiles/zsh/zshrc"
 alias vimrc="nvim ~/.dotfiles/nvim/init.vim"
 alias rk="rancher kubectl"
 alias kc="kubectl"
+alias tx="tmuxinator"
 alias v="nvim ."
 # Common aliases
 alias disk="df -H | grep -vE '^Filesystem|tmpfs|cdrom'"
@@ -129,8 +132,6 @@ alias l='ls -lah'
 alias ll='ls -lh'
 alias la='ls -lAh'
 
-# OuiCar's configuration
-alias nodexec='docker exec -it frontend.node'
 # }}}
 
 # PluginConfig {{{
@@ -213,3 +214,13 @@ function seal() {
 
 # }}}
 
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/pawndev/workspace/marcel/marcel-backend/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/pawndev/workspace/marcel/marcel-backend/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/pawndev/workspace/marcel/marcel-backend/node_modules/tabtab/.completions/sls.zsh ]] && . /home/pawndev/workspace/marcel/marcel-backend/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /home/pawndev/workspace/marcel/marcel-backend/node_modules/tabtab/.completions/slss.zsh ]] && . /home/pawndev/workspace/marcel/marcel-backend/node_modules/tabtab/.completions/slss.zsh
