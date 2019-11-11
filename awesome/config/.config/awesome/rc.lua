@@ -56,7 +56,7 @@ local dpi = xresources.apply_dpi
 -- Default applications
 -- terminal = "xterm"
 terminal = "exo-open --launch TerminalEmulator"
-tmux = 'alacritty -e tmux'
+tmux = 'xst -e zsh -c "tmux"'
 web_browser = "exo-open --launch WebBrowser"
 file_manager = "exo-open --launch FileManager"
 editor = os.getenv("EDITOR") or "nvim"
