@@ -19,10 +19,11 @@ COL_CYAN=$ESC_SEQ"36;01m"
 # }}}
 
 # Exports {{{
-export TERM="xterm-256color"
+export TERM="screen-256color"
 export LC_CTYPE="en_US.UTF-8"
 export VISUAL="nvim"
 export EDITOR="nvim"
+export ANDROID_HOME="$HOME/Android"
 #export BULLETTRAIN_EXEC_TIME_ELAPSED=1
 #export BULLETTRAIN_STATUS_EXIT_SHOW=true
 export BAT_THEME="OneHalfDark"
@@ -35,27 +36,18 @@ export GOROOT="$HOME/workspace/golang/bin"
 export NVM_LAZY_LOAD=false
 export NVM_AUTO_USE=false
 #Theme
-prompt_vi_mode() {
-  case ${KEYMAP} in
-        (vicmd)      prompt_segment blue white "N" ; print -n -- "\E]50;CursorShape=0\C-G" ;;
-        (main|viins) prompt_segment blue white "I" ; print -n -- "\E]50;CursorShape=2\C-G";;
-        (*)          prompt_segment blue white "I" ; print -n -- "\E]50;CursorShape=2\C-G";;
-    esac
-}
-export BULLETTRAIN_PROMPT_ORDER=(
-  vi_mode
-  time
-  status
-  custom
-  context
-  dir
-  screen
-  git
-  cmd_exec_time
-  go
-)
+#prompt_vi_mode() {
+  #case ${KEYMAP} in
+        #(vicmd)      prompt_segment blue white "N" ; print -n -- "\E]50;CursorShape=0\C-G" ;;
+        #(main|viins) prompt_segment blue white "I" ; print -n -- "\E]50;CursorShape=2\C-G";;
+        #(*)          prompt_segment blue white "I" ; print -n -- "\E]50;CursorShape=2\C-G";;
+    #esac
+#}
 
-export PATH="$PATH:$GOPATH/bin:$HOME/.config/composer/vendor/bin:$HOME/.composer/vendor/bin:$HOME/bin:$HOME/.local/bin"
+export PATH="$PATH:$GOPATH/bin:$HOME/.config/composer/vendor/bin:$HOME/.composer/vendor/bin:$HOME/bin:$HOME/.local/bin:/home/pawndev/workspace/ci_formation/bin"
+export PATH=$PATH:$ANDROID_HOME/Sdk/tools
+export PATH=$PATH:$ANDROID_HOME/Sdk/tools/bin
+export PATH=$PATH:$ANDROID_HOME/Sdk/platform-tools
 # }}}
 
 # Config {{{
@@ -79,7 +71,6 @@ zplug "plugins/docker",   from:oh-my-zsh
 zplug "plugins/cp",   from:oh-my-zsh
 #zplug "plugins/common-aliases",   from:oh-my-zsh
 zplug "MichaelAquilina/zsh-you-should-use"
-#zplug "caiogondim/bullet-train.zsh", use:bullet-train.zsh-theme
 zplug "lukechilds/zsh-nvm"
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 
@@ -97,6 +88,7 @@ alias rk="rancher kubectl"
 alias kc="kubectl"
 alias tx="tmuxinator"
 alias v="nvim ."
+alias dps-name="docker ps --format '{{.Names}}'"
 # Common aliases
 alias disk="df -H | grep -vE '^Filesystem|tmpfs|cdrom'"
 alias :q="exit"
@@ -106,24 +98,6 @@ alias spotiprev="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /
 alias spotistop="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
 ls --color -d . &>/dev/null && alias ls='ls --color=tty' || { ls -G . &>/dev/null && alias ls='ls -G' }
 
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
-alias -g ......='../../../../..'
-
-alias -- -='cd -'
-alias 1='cd -'
-alias 2='cd -2'
-alias 3='cd -3'
-alias 4='cd -4'
-alias 5='cd -5'
-alias 6='cd -6'
-alias 7='cd -7'
-alias 8='cd -8'
-alias 9='cd -9'
-
-alias md='mkdir -p'
-alias rd=rmdir
 alias d='dirs -v | head -10'
 
 # List directory contents
@@ -214,13 +188,3 @@ function seal() {
 
 # }}}
 
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /home/pawndev/workspace/marcel/marcel-backend/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/pawndev/workspace/marcel/marcel-backend/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /home/pawndev/workspace/marcel/marcel-backend/node_modules/tabtab/.completions/sls.zsh ]] && . /home/pawndev/workspace/marcel/marcel-backend/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /home/pawndev/workspace/marcel/marcel-backend/node_modules/tabtab/.completions/slss.zsh ]] && . /home/pawndev/workspace/marcel/marcel-backend/node_modules/tabtab/.completions/slss.zsh
