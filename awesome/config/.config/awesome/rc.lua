@@ -255,9 +255,8 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 local layout_indicator = require("custom-extras.keyboard_switch")
 kbdcfg = layout_indicator({
     layouts = {
-        {name="us(altgr)",  layout="us", variant=nil, compose="ralt"},
         {name="us(intl)",  layout="us",  variant="intl"},
-        {name="dvo(intl)",  layout="us",  variant="dvorak-intl", compose=nil},
+        {name="us(altgr)",  layout="us", variant=nil, compose="ralt"},
         {name="dvo(altgr)",  layout="us",  variant="dvorak", compose="ralt"},
     }
 })
