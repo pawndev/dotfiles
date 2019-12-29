@@ -5,3 +5,5 @@ export SPOTIFY_USERNAME=boulou
 export SPOTIFY_PASSWORD=boulou
 export SPOTIFY_CLIENT_ID=client-id
 export SPOTIFY_CLIENT_SECRET=client-secret
+
+CIRCLECI_CLI_TOKEN=boulou
