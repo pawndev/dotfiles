@@ -151,15 +151,6 @@ function MyTabLine()
         return s
       endfunction
 
-function! OuicarInsertPath()
-  let p = split(expand('%:p:h'), '/')
-  if (index(p, 'src') >= 0)
-    let src = index(p, 'app')
-    let c = ["ouicar"] + p[src+1:]
-    return join(c, '/')
-  endif
-endfunction
-
 function! InsertBeforeCursor(c)
   execute 'normal! i'.a:c
 endfunction
@@ -228,6 +219,8 @@ autocmd FileType vim,zsh,i3config,dosini,conf setlocal foldmethod=marker
 call plug#begin('~/.config/nvim/plugged')
 
 " Completion {{{
+Plug 'dhruvasagar/vim-table-mode'
+
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 
@@ -270,11 +263,14 @@ Plug 'StanAngeloff/php.vim'
 Plug 'mboughaba/i3config.vim'
 Plug 'jparise/vim-graphql'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'google/vim-jsonnet'
 " }}}
 
 " Themes {{{
 "Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/rainbow_parentheses.vim'
+" keep indentline?
+Plug 'Yggdroot/indentline'
 "Plug 'ryanoasis/vim-devicons'
 "Plug 'pawndev/colour-schemes', {'rtp': 'vim'}
 "Plug 'tyrannicaltoucan/vim-quantum'
@@ -300,6 +296,7 @@ Plug 'chrisbra/Colorizer'
 Plug 'lifepillar/pgsql.vim'
 " to configure vim-venu
 " install and config https://github.com/vimwiki/vimwiki
+Plug 'vimwiki/vimwiki'
 "
 "Plug 'mbbill/undotree'
 "Plug 'sjl/gundo.vim'
@@ -449,7 +446,7 @@ let g:one_allow_italics = 1
   if executable('rls')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'rls',
-        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+        \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
         \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'Cargo.toml'))},
         \ 'whitelist': ['rust'],
         \ })
