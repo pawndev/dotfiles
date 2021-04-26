@@ -2,7 +2,9 @@
 if [[ $DISPLAY ]]; then
     # If not running interactively, do not do anything
     [[ $- != *i* ]] && return
-    [[ -z "$TMUX" ]] && exec tmux
+    if ! ps -p $PPID | grep -q java; then
+      [[ -z "$TMUX" ]] && exec tmux
+    fi
 fi
 source ~/.dotfiles/zsh/variables.zsh
 # }}}
@@ -48,6 +50,7 @@ export PATH="$PATH:$GOPATH/bin:$HOME/.config/composer/vendor/bin:$HOME/.composer
 export PATH=$PATH:$ANDROID_HOME/Sdk/tools
 export PATH=$PATH:$ANDROID_HOME/Sdk/tools/bin
 export PATH=$PATH:$ANDROID_HOME/Sdk/platform-tools
+export PATH="$PATH:$HOME/.poetry/bin"
 # }}}
 
 # Config {{{
@@ -188,3 +191,13 @@ function seal() {
 
 # }}}
 
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/pawndev/workspace/marcel/backend-automation/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/pawndev/workspace/marcel/backend-automation/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/pawndev/workspace/marcel/backend-automation/node_modules/tabtab/.completions/sls.zsh ]] && . /home/pawndev/workspace/marcel/backend-automation/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /home/pawndev/workspace/marcel/backend-automation/node_modules/tabtab/.completions/slss.zsh ]] && . /home/pawndev/workspace/marcel/backend-automation/node_modules/tabtab/.completions/slss.zsh

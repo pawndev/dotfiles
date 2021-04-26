@@ -13,6 +13,7 @@ run compton -b --config ~/.config/compton/compton.conf
 run dunst --config ~/.config/dunst/dunstrc &
 run blueman-applet
 run indicator-sound-switcher
+run jetbrains-toolbox
 xbindkeys
 setxkbmap us -option compose:ralt
 easystroke enable &

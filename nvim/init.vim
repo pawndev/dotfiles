@@ -264,6 +264,7 @@ Plug 'mboughaba/i3config.vim'
 Plug 'jparise/vim-graphql'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'google/vim-jsonnet'
+Plug 'arrufat/vala.vim'
 " }}}
 
 " Themes {{{
@@ -499,6 +500,15 @@ let g:one_allow_italics = 1
         \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
         \ 'whitelist': ['typescript'],
         \ })
+  endif
+  " }}}
+  " vala {{{
+  if executable('vala-language-server')
+    au User lsp_setup call lsp#register_server({
+          \ 'name': 'vala-language-server',
+          \ 'cmd': {server_info->[&shell, &shellcmdflag, 'vala-language-server']}, 
+          \ 'whitelist': ['vala'],
+          \ })
   endif
   " }}}
 

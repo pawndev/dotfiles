@@ -14,6 +14,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+--require("noodle.notifications")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -809,6 +810,7 @@ end)
 --------------  Global Key bindings   ---------------
 -----------------------------------------------------
 globalkeys = gears.table.join(
+    awful.key({ modkey,        }, ".", function() awful.spawn.with_shell("rofimoji") end),
     awful.key({ "Mod1",        }, "F1",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     awful.key({ "Mod4", "Mod1" }, "Left",   awful.tag.viewprev,
